@@ -23,9 +23,9 @@ jobs:
       - name: Update Server Repository
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-          "cd ${{ secrets.SSH_PATH }} && git pull origin main"
+          "cd ${{ secrets.SSH_PATH }} && git pull origin ton-bounty"
 
       - name: Restart Project Container
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-          "cd ${{ secrets.SSH_PATH }} && docker-compose restart project"
+          "cd ${{ secrets.SSH_PATH }} && docker-compose restart bot"
